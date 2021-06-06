@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    width: 100%;
+    height: 75px;
+    background-color: lightpink;
+    display: inline-block;
+}
+#header img{
+    vertical-align: middle;
+}
+#header span{
+    vertical-align: middle;
+    line-height: 75px;
+}
+#header a{
+    color: white;
+}
+#title1{
+    text-align: center;
+}
+#img{
+    background-color: mistyrose;
+    width: ;
+}
