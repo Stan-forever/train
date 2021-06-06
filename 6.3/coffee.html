@@ -5,7 +5,88 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
-     <link href="coffee.css" rel="stylesheet" type="text/css">
+     <style>
+         body{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            background-color: royalblue;
+            height: 150px;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
+        #header span{
+            font-size: 24px; 
+            color: white;
+            line-height: 150px;
+        } 
+        #nav-left{
+            margin-top: 0;
+            width: 30%;
+            height: 1000px;
+            background-color: gainsboro;
+            /* text-align: center; */
+            float: left;
+        }
+        #nav-left ul{
+            list-style-type: none;
+        }
+        #nav-left li{
+            height: 50px;
+            border-bottom: 1px solid black;
+            line-height: 50px;
+        }
+        #nav-left li:last-child{
+            border-bottom: none;
+        }
+        #content{
+            width: 70%;
+            height: 500px;
+            display: inline-block;
+            text-align: center;
+        }
+        .content-img{
+            width: 80%;
+            height: 150px;
+            vertical-align: middle;
+            margin-top: 20px;
+        }
+        #content-table{
+            border-collapse: collapse;
+            width: 80%;
+            height: 100px;
+            margin-top: 20px;  
+            margin: 20px auto;
+
+        }
+        #content-table th{
+            border: 1px solid black;
+        }
+        #content-table td{
+            border: 1px solid black;
+        }
+        #content-text{
+            width: 70%;
+            float: left; 
+            text-align: left;
+        }
+        .content-text1{
+            height:150px;
+        }
+        #footer{
+            width: 100%;
+            height: 75px;
+            background-color: royalblue;
+            text-align: center;
+            float: left;
+        }
+        #footer span{
+            line-height: 75px;
+        }
+
+     </style>
  </head>
  <body>
      <div id="header">
