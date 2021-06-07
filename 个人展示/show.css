@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    background-color: hotpink;
+}
+.nav{
+    width: 1200px;
+    height: 75px;   
+}
+.logo{
+    vertical-align: middle;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+.nav span{
+    vertical-align: middle;
+    line-height: 75px;
+}
+.nav ul{
+    float: right;  
+}
+.nav li{
+    display: inline;
+    line-height: 75px;
+}
+.movies,.books{
+    width: 1200px;
+    margin: 0 auto;
+}
+.movies h2,h3{
+    text-align: center;
+}
+.books h2,h3{
+    text-align: center;
+}
+.movies hr,.books hr{
+    width: 75px;
+    border: 3px solid black;
+}
+.movies::after,.books::after{
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+.movies ul,.books ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.movies img,.books img{
+    width: 275px;
+    height: 300px;
+}
+.movies li,.books li{
+    border: 1px solid pink;
+    padding: 5px;
+}
+.movies li:hover,.books li:hover{
+    margin-top: -5px;
+}
+#footer{
+    background-color: hotpink;
+}
+.footer-text{
+    width: 1200px;
+    height: 150px;
+    margin: 0 auto;  
+}
+.footer-text p{
+    float: left;
+    width: 900px;
+}
+.footer-text img{
+    width: 300px;
+    height: 150px;
+}
+#footer hr{
+    width: 1200px;
+    border: 1 solid;
+}
+.copyright{
+    text-align: center;
+}
