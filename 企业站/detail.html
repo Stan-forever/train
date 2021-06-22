@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>新闻列表</title>
+     <link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+ </head>
+ <body>
+    <div id="header" style="margin-bottom: 50px;">
+        <div class="logo between container">
+            <div class="logo">
+                <img id="img1" src="img/篮球.svg">
+                <span>NBA球员网</span>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="newslist.html">新闻</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id='newsdetail' class="container">
+    </div>
+    <div class="footer">
+        <div class="footer-img">
+          <div class="footer-content-img1">
+            <img src="img/服 务 (1).svg" alt="">
+            <img src="img/服务 (2).svg" alt="">
+            <img src="img/服务 (3).svg" alt="">
+            <img src="img/二维码.svg" alt="">
+           </div>
+           <div class="footer-text">
+             <span>服务1</span>
+             <span>服务2</span>
+             <span>服务3</span>
+             <span>扫描二维码</span>
+           </div>  
+           <br>
+           <hr>
+           <span>版权所有</span>     
+        </div>
+      </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var i = window.location.search.split('=')[1];
+        axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/3182703138/nbanewsdetail`).then(res => {
+            var newsdetail = $('#newsdetail');
+            // let title = $(`<h3>${res.data.data[i-1].title}</h3>`);
+            newsdetail.append(`<h3>${res.data.data[i-1].title}</h3>`);
+            newsdetail.append(`<p style="color:darkgrey; font-size: 15px; margin: auto;">${res.data.data[i-1].date}</p>`);
+            newsdetail.append(`<img width='800px' height='500px' src="${res.data.data[i-1].imgUrl}" alt="">`);
+            newsdetail.append(`<p style="font-size: 13px;">${res.data.data[i-1].content}</p>`);
+        })
+    </script>
+</body>
+</html>

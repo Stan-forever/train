@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>关于我们</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?type=webgl&v=1.0&ak=edalo7aeIw3tmraUU2hn8or6ns2xcMwi"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>   
+    <div id="header">
+        <div class="logo between container">
+            <div class="logo">
+                <img id="img1" src="img/篮球.svg">
+                <span>NBA球员网</span>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="newslist.html">新闻</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="about-content">
+        <div style="width: 450px; height: 300px;" id="map"></div>
+        <div class="about-text">
+            <span class="about-text1">美国职业篮球联赛（National Basketball Association），简称美职篮（NBA），是由北美30支职业
+                球队组成的男子职业篮球联盟，是美国四大职业体育联盟之一。其中诞生了如：迈克尔·乔丹、比尔·拉塞尔
+                、科比·布莱恩特、卡里姆·阿卜杜·贾巴尔、威尔特·张伯伦、埃尔文·约翰逊、拉里·伯德、奥斯卡·罗伯特
+                森、约翰·哈弗利切克、里克·巴里、约翰·斯托克顿、卡尔·马龙、埃尔金·贝勒、大卫·罗宾逊、朱利叶斯·
+                欧文、沙奎尔·奥尼尔、查尔斯·巴克利、阿伦·艾弗森、勒布朗·詹姆斯、斯蒂芬·库里、克里斯·保罗、詹姆
+                斯·哈登、姚明等传奇球星。
+            </span>
+            <br>
+            <br>
+            <div>
+                <img class="about-img" src="img/服 务 (1).svg" alt="">
+                <span class="about-text2">福建省福州市闽侯县大学城闽江学院二区二</span>
+            </div>
+            <div>
+                <img class="about-img" src="img/服务 (2).svg" alt="">
+                <span class="about-text2">1725116377@qq.com</span>
+            </div>
+            <div>
+                <img class="about-img" src="img/服务 (3).svg" alt="">
+                <span class="about-text2">15959403041</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-img">
+          <div class="footer-content-img1">
+            <img src="img/服 务 (1).svg" alt="">
+            <img src="img/服务 (2).svg" alt="">
+            <img src="img/服务 (3).svg" alt="">
+            <img src="img/二维码.svg" alt="">
+           </div>
+           <div class="footer-text">
+             <span>服务1</span>
+             <span>服务2</span>
+             <span>服务3</span>
+             <span>扫描二维码</span>
+           </div>  
+           <br>
+           <hr>
+           <span>版权所有</span>     
+        </div>
+      </div>
+</body>
+</html>
+<script>
+    var map = new BMapGL.Map('map'); 
+    map.centerAndZoom(new BMapGL.Point(119.17573,26.073617),16); 
+    map.enableScrollWheelZoom(true); 
+    var marker1 = new BMapGL.Marker(new BMapGL.Point(119.17573,26.073617));
+    map.addOverlay(marker1);
+</script>

@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>新闻列表</title>
+     <link rel="stylesheet" href="main.css">
+     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+ </head>
+ <body>
+    <div id="header" style="margin-bottom: 50px;">
+        <div class="logo between container">
+            <div class="logo">
+                <img id="img1" src="img/篮球.svg">
+                <span>NBA球员网</span>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="newslist.html">新闻</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="newslist-content" style="margin-bottom: 50px;">  
+        <h3>最新新闻</h3>
+        <hr>
+        <ul id="newslist"></ul>
+    </div>
+    <div style="text-align: center;padding: 20px;">
+      <button class ="changepage" id ="page1" value="1">1</button>
+      <button class ="changepage" id ="page2" value="2">2</button>
+      <button class ="changepage" id ="page3" value="3">3</button>
+    </div>
+    <div class="footer">
+        <div class="footer-img">
+          <div class="footer-content-img1">
+            <img src="img/服 务 (1).svg" alt="">
+            <img src="img/服务 (2).svg" alt="">
+            <img src="img/服务 (3).svg" alt="">
+            <img src="img/二维码.svg" alt="">
+           </div>
+           <div class="footer-text">
+             <span>服务1</span>
+             <span>服务2</span>
+             <span>服务3</span>
+             <span>扫描二维码</span>
+           </div>  
+           <br>
+           <hr>
+           <span>版权所有</span>     
+        </div>
+      </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+     <script>
+       let pages = window.location.href.split('?page=')[1] || 1
+        axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/3182703138/newslistpage=${pages}`)
+         .then(res => {
+             console.log(res);
+             for(let i = 0; i < res.data.data.length; i++) {
+               let li =$("<li></li>")
+              //  $(`#newslist`).append(`
+              //  <ul class='newslist-content1'>
+              //   <img width='250px' height='250px' src=${res.data.data[i].imgUrl}>
+              //   <h9>${res.data.data[i].title}</h9> 
+              //  </ul>             
+              //  `)   
+              li.append(`<img width='250px' height='250px'src=${res.data.data[i].imgUrl}>`);
+              li.append(`<h9>${res.data.data[i].title}</h9> `)     
+              $("#newslist").append(li);    
+              li.attr('id',res.data.data[i].id)
+              $('#newslist li').click(function(){
+                  window.location.href = `detail.html?id=${$(this).attr('id')}`
+                })         
+             }          
+         })
+         $(".changepage").click(function () {
+            $("#newslist").empty();
+            var page = this.value;
+            window.location.href = `?page=${page}`
+        })
+    </script>
+ </body>
+ </html>

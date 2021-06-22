@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <ul class="list"></ul>
+     <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>    
+    axios.get('https://lingqule.papamk.com/wp-json/w2w/v1/products')
+    .then(res => {
+        console.log(res);
+        // const data = res.data
+        // const img = res.data[0].images[0]
+        // console.log(img);
+        // for(var i = 0; i < data.length; i++) {
+        //     $(".list").append(`<li> ${data[i].name}</li>`)
+        // }
+        for(var m = 0;m < res.data.length; m++) {
+            let li = $(`<li></li>`)
+            // $(".img").append(`<li> ${img[i].id}</li>`)
+            li.append(`<img width='300px' height='300px' src=${res.data[m].images[0].src}>`)
+            li.append(`<h3>${res.data[m].name}</h3>`)
+            li.append(`<span>${res.data[m].date_created}</span>`)
+            $(`.list`).append(li);
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    </script>
+ </body>
+ </html>
