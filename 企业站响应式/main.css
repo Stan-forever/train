@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+}
+#header{
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.container1{
+    font-size: 17px;
+    width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+}
+#img1{
+    height: 40px;
+    width: 40px;
+}
+.nav{
+    float: right;
+}
+.nav li{
+    margin-left: 15px;
+    float: left;
+    font-size: 16px;
+}
+.between{
+    justify-content: space-between;
+}
+.serve{
+    width: 1200px;
+    text-align: center;
+    margin: 0 auto;  
+    align-items: center; 
+    margin-bottom: 25px;
+}
+.serve-show{
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+.serve-show img{
+    width: 50px;
+    height: 50px;
+}
+.serve-show span{
+    display: block;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.serve-text1{
+    flex: 1;
+}
+.serve-text2{
+    flex: 1;
+}
+.serve-text3{
+    flex: 1;
+}
+.serve-text4{
+    flex: 1;
+}
+.content{   
+    text-align: center;
+    width: 1200px;
+    margin-top: 15px;
+    margin: 0 auto;
+}
+.content-text{
+    /* display: flex; */
+    margin-bottom: 15px;
+}
+/* .content-text1{
+    flex: 1;
+} */
+.content-text1 span{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.footer{
+    background: #f0f0f0;
+    text-align: center;
+    align-items: center;
+}
+.footer-img{
+    margin: 0 auto;   
+}
+.footer-content-img1{
+    display: flex; 
+}
+.footer-content-img1 span{
+    display: block;
+    margin-top: 10px;
+}
+.footer-content-img1 img{
+    flex: 1;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+.newslist-content{
+    text-align: center;
+    margin: 0 auto;  
+}
+#newslist li{ 
+    display: inline-block;  
+    width: 100%;
+    margin-bottom: 10px;
+}
+#newslist li h9{
+    font-size: 16px;
+}
+#about-content{
+    margin: 0 auto;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#map{
+    flex: 1;
+}
+.about-text{
+    flex: 1;
+    margin-left: 20px;
+    padding: 10px;
+}
+.about-img{
+    width: 30px;
+    margin-right: 20px;
+}
+.about-text1{
+    margin-bottom: 10px;
+}
+.about-text2{
+    font-size: 12px;
+}
