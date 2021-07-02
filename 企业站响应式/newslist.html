@@ -40,7 +40,7 @@
         <h3 style="font-weight: bolder;">最新新闻</h3>
         <hr>
         <div class="row">
-          <ul id="newslist"></ul>
+          <ul id="newslist" style="margin: 0; padding: 0;" ></ul>
         </div>
     </div>
     </div>
@@ -97,8 +97,10 @@
        getData(pages)
        function getData(page) {
          pages = page
+        // axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/3182703138/newslistpage=${pages}`)
         axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/3182703138/newslistpage=${pages}`)
          .then(res => {
+           console.log(res);
              $('#newslist').empty();
              for(let i = 0; i < res.data.data.length; i++) {
                let li =$("<li></li>") 

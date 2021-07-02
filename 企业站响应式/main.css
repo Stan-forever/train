@@ -105,8 +105,10 @@ body{
     margin: 0 auto;  
 }
 #newslist li{ 
-    display: inline-block;  
+    /* display: inline-block;   */
+    float: left;
     width: 100%;
+    list-style-type: none;
     margin-bottom: 10px;
 }
 #newslist li h9{

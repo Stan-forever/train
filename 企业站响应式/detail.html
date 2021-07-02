@@ -70,12 +70,14 @@
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
     <script>
         var i = window.location.search.split('=')[1];
-        axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/3182703138/nbanewsdetail`).then(res => {
+        console.log(i);
+        axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/test?id=${i}`).then(res => {
+            console.log(res);
             var row = $('.row1');
-            row.append(`<h3 class="col-xs-12 col-sm-12">${res.data.data[i-1].title}</h3>`);
-            row.append(`<p class="col-xs-12 col-sm-12 style="color:darkgrey; font-size: 15px; margin: auto;">${res.data.data[i-1].date}</p>`);
-            row.append(`<img class="col-xs-12 col-sm-12 class="img-responsive center-block" src="${res.data.data[i-1].imgUrl}" alt="">`);
-            row.append(`<p style="font-size: 13px;margin-top:15px">${res.data.data[i-1].content}</p>`);
+            row.append(`<h3 class="col-xs-12 col-sm-12">${res.data.data.list[0].title}</h3>`);
+            row.append(`<p class="col-xs-12 col-sm-12 style="color:darkgrey; font-size: 15px; margin: auto;">${res.data.data.list[0].date}</p>`);
+            row.append(`<img class="col-xs-12 col-sm-12 class="img-responsive center-block" src="${res.data.data.list[0].imgUrl}" alt="">`);
+            row.append(`<p style="font-size: 13px;margin-top:15px">${res.data.data.list[0].content}</p>`);
         })
     </script>
 </body>
