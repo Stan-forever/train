@@ -45,7 +45,7 @@
               </ol>
               <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                  <img class="zoomImage" src="img/轮播图1.jpg" alt="..."  >
+                  <img src="img/轮播图1.jpg" data-src="img/轮播图1 1080 635.jpg 600w" alt="..."  >
                   <div class="carousel-caption">
                   </div>
                 </div>
@@ -97,7 +97,7 @@
       <div class="row" >
         <div class="content-text">
           <div class="col-xs-12 col-sm-6">
-            <img class="img-responsive" src="img/哈登.jpg" alt="">
+            <img class="img-responsive" src="img/未加载.png" data-src="img/哈登.jpg" alt="">
           </div>
           <div class=" col-xs-12 col-sm-6">
             <h5 style="font-weight: bolder;">詹姆斯·哈登</h5>
@@ -115,7 +115,7 @@
         </div>
         <div class="content-text" style="float: left ;margin-top: 15px;">
           <div class="col-xs-12 col-sm-6">
-            <img class="img-responsive" src="img/戴维斯.jpg" alt="">
+            <img class="img-responsive" src="img/未加载.png" data-src="img/戴维斯.jpg" alt="">
           </div>
           <div class=" col-xs-12 col-sm-6">
             <h5 style="font-weight: bolder;">安东尼戴维斯</h5>
@@ -132,7 +132,7 @@
         </div>
         <div class="content-text" style="float: left ;margin-top: 15px;">
           <div class="col-xs-12 col-sm-6">
-            <img class="img-responsive" src="img/小卡.jpg" alt="">
+            <img class="img-responsive" src="img/未加载.png" data-src="img/小卡.jpg" alt="">
           </div>
           <div class="col-xs-12 col-sm-6">
             <h5 style="font-weight: bolder;">科怀伦纳德</h5>
@@ -153,22 +153,22 @@
         <h3>新闻动态</h3>
         <div class="news-img row">
           <div class="col-xs-12 col-sm-6 col-md-3" style="padding: 5px;">
-            <img class="img-responsive center-block" src="img/新闻1.jpg" alt="">
+            <img class="img-responsive center-block" src="img/未加载.png" data-src="img/新闻1.jpg" alt="">
             <br>
             <span>冲击第三金 阿杜加入美国男篮征战东京奥运会</span>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3" style="padding: 5px;">
-            <img class="img-responsive center-block" src="img/新闻2.jpg" alt="">
+            <img class="img-responsive center-block" src="img/未加载.png" data-src="img/新闻2.jpg" alt="">
             <br>
             <span>乔治：首场就是遭遇战 我们一直很擅长调整</span>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3" style="padding: 5px;">
-            <img class="img-responsive center-block" src="img/新闻3.jpg" alt="">
+            <img class="img-responsive center-block" src="img/未加载.png" data-src="img/新闻3.jpg" alt="">
             <br>
             <span>太阳GM詹姆斯-琼斯当选年度最佳总经理</span>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3" style="padding: 5px;">
-            <img class="img-responsive center-block" src="img/新闻4.jpg" alt="">
+            <img class="img-responsive center-block" src="img/未加载.png" data-src="img/新闻4.jpg" alt="">
             <br>
             <span>成自由球员 曝丁维迪拒执行下赛季球员选项</span>
           </div>
@@ -203,5 +203,51 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      var lazyLoad = (function(){
+        var clock;       
+        function init(){
+          $(window).on("scroll", function(){
+            if (clock) {
+              clearTimeout(clock);
+            }
+            clock = setTimeout(function(){
+              checkShow();
+            }, 100);
+          })
+          checkShow();
+        }       
+        function checkShow(){
+          // $("#newslist img").each(function(){
+            $(".container img").each(function(){
+            var $cur =$(this);
+            if($cur.attr('isLoaded')){
+                  return;
+                }
+            if(shouldShow($cur)){
+              showImg($cur);
+            }
+          })
+        }
+        function shouldShow($node){
+          var scrollH = $(window).scrollTop(),
+            winH = $(window).height(),
+            top = $node.offset().top;
+          if(top < winH + scrollH){
+              return true;
+            }else{
+              return false;
+            }
+        }
+        function showImg($node){
+            $node.attr('src', $node.attr('data-src'));
+            $node.attr('isLoaded', true);
+        }
+        return {
+          init: init
+        }
+      })()
+      lazyLoad.init();
+      </script> 
  </body>
  </html>
