@@ -78,7 +78,6 @@
       </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script> -->
     <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
      <script>
        var pages = window.location.href.split('?page=')[1] || 1    
@@ -99,7 +98,7 @@
          pages = page
         // axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/3182703138/newslistpage=${pages}`)
         axios.get(`https://www.fastmock.site/mock/1347b2d158208086520c5f33d50b1b22/3182703138-NBA/3182703138/newslistpage=${pages}`)
-         .then(res => {
+         .then(res => { 
            console.log(res);
              $('#newslist').empty();
              for(let i = 0; i < res.data.data.length; i++) {
